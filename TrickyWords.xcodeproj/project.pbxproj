@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDAE40DE182129DE004EC29C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40DD182129DE004EC29C /* AboutViewController.m */; };
+		CDAE40E1182129F4004EC29C /* SingleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40E0182129F4004EC29C /* SingleListViewController.m */; };
+		CDAE40E418212A09004EC29C /* MultipleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40E318212A09004EC29C /* MultipleListViewController.m */; };
+		CDAE40E718212A29004EC29C /* AllWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40E618212A29004EC29C /* AllWordsViewController.m */; };
 		CDDE8DCB1821112C00587412 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDE8DCA1821112C00587412 /* Foundation.framework */; };
 		CDDE8DCD1821112C00587412 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDE8DCC1821112C00587412 /* CoreGraphics.framework */; };
 		CDDE8DCF1821112C00587412 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDE8DCE1821112C00587412 /* UIKit.framework */; };
@@ -34,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CDAE40DC182129DE004EC29C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		CDAE40DD182129DE004EC29C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		CDAE40DF182129F4004EC29C /* SingleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleListViewController.h; sourceTree = "<group>"; };
+		CDAE40E0182129F4004EC29C /* SingleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleListViewController.m; sourceTree = "<group>"; };
+		CDAE40E218212A09004EC29C /* MultipleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleListViewController.h; sourceTree = "<group>"; };
+		CDAE40E318212A09004EC29C /* MultipleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleListViewController.m; sourceTree = "<group>"; };
+		CDAE40E518212A29004EC29C /* AllWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllWordsViewController.h; sourceTree = "<group>"; };
+		CDAE40E618212A29004EC29C /* AllWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllWordsViewController.m; sourceTree = "<group>"; };
 		CDDE8DC71821112C00587412 /* TrickyWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrickyWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDE8DCA1821112C00587412 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDDE8DCC1821112C00587412 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +91,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CDAE40E818215201004EC29C /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 		CDDE8DBE1821112C00587412 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +131,20 @@
 		CDDE8DD01821112C00587412 /* TrickyWords */ = {
 			isa = PBXGroup;
 			children = (
+				CDAE40E818215201004EC29C /* Graphics */,
 				CDDE8DD91821112C00587412 /* TWAppDelegate.h */,
 				CDDE8DDA1821112C00587412 /* TWAppDelegate.m */,
 				CDDE8DDC1821112C00587412 /* Main.storyboard */,
 				CDDE8DDF1821112C00587412 /* TWViewController.h */,
 				CDDE8DE01821112C00587412 /* TWViewController.m */,
+				CDAE40DC182129DE004EC29C /* AboutViewController.h */,
+				CDAE40DD182129DE004EC29C /* AboutViewController.m */,
+				CDAE40E518212A29004EC29C /* AllWordsViewController.h */,
+				CDAE40E618212A29004EC29C /* AllWordsViewController.m */,
+				CDAE40E218212A09004EC29C /* MultipleListViewController.h */,
+				CDAE40E318212A09004EC29C /* MultipleListViewController.m */,
+				CDAE40DF182129F4004EC29C /* SingleListViewController.h */,
+				CDAE40E0182129F4004EC29C /* SingleListViewController.m */,
 				CDDE8DE21821112C00587412 /* Images.xcassets */,
 				CDDE8DD11821112C00587412 /* Supporting Files */,
 			);
@@ -250,9 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDAE40E418212A09004EC29C /* MultipleListViewController.m in Sources */,
 				CDDE8DD71821112C00587412 /* main.m in Sources */,
 				CDDE8DDB1821112C00587412 /* TWAppDelegate.m in Sources */,
+				CDAE40E718212A29004EC29C /* AllWordsViewController.m in Sources */,
+				CDAE40DE182129DE004EC29C /* AboutViewController.m in Sources */,
 				CDDE8DE11821112C00587412 /* TWViewController.m in Sources */,
+				CDAE40E1182129F4004EC29C /* SingleListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +493,7 @@
 				CDDE8DFB1821112C00587412 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDDE8DFC1821112C00587412 /* Build configuration list for PBXNativeTarget "TrickyWordsTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +502,7 @@
 				CDDE8DFE1821112C00587412 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
