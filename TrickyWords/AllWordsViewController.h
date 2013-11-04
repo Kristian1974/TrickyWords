@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TWViewController.h"
 
 @interface AllWordsViewController : UIViewController <UIAlertViewDelegate>
 {
@@ -29,6 +30,9 @@
 - (void)allWordsPresentWordstoScreen;
 - (IBAction)allWordsCorrectButton:(id)sender;
 - (IBAction)allWordsIncorrectButton:(id)sender;
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+
 
 
 @end

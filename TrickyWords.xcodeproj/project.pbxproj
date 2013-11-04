@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD89F7771827E226004CA1C4 /* TWWordsDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = CD89F7761827E226004CA1C4 /* TWWordsDeck.m */; };
 		CDAE40DE182129DE004EC29C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40DD182129DE004EC29C /* AboutViewController.m */; };
 		CDAE40E1182129F4004EC29C /* SingleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40E0182129F4004EC29C /* SingleListViewController.m */; };
 		CDAE40E418212A09004EC29C /* MultipleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40E318212A09004EC29C /* MultipleListViewController.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD89F7751827E226004CA1C4 /* TWWordsDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWordsDeck.h; sourceTree = "<group>"; };
+		CD89F7761827E226004CA1C4 /* TWWordsDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWordsDeck.m; sourceTree = "<group>"; };
 		CDAE40DC182129DE004EC29C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		CDAE40DD182129DE004EC29C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		CDAE40DF182129F4004EC29C /* SingleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleListViewController.h; sourceTree = "<group>"; };
@@ -91,11 +94,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD89F7741827E13B004CA1C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD89F7751827E226004CA1C4 /* TWWordsDeck.h */,
+				CD89F7761827E226004CA1C4 /* TWWordsDeck.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CDAE40E818215201004EC29C /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Graphics;
+			path = TrickyWords;
 			sourceTree = "<group>";
 		};
 		CDDE8DBE1821112C00587412 = {
@@ -105,6 +118,7 @@
 				CDDE8DEF1821112C00587412 /* TrickyWordsTests */,
 				CDDE8DC91821112C00587412 /* Frameworks */,
 				CDDE8DC81821112C00587412 /* Products */,
+				CDAE40E818215201004EC29C /* Graphics */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,9 +145,6 @@
 		CDDE8DD01821112C00587412 /* TrickyWords */ = {
 			isa = PBXGroup;
 			children = (
-				CDAE40E818215201004EC29C /* Graphics */,
-				CDDE8DD91821112C00587412 /* TWAppDelegate.h */,
-				CDDE8DDA1821112C00587412 /* TWAppDelegate.m */,
 				CDDE8DDC1821112C00587412 /* Main.storyboard */,
 				CDDE8DDF1821112C00587412 /* TWViewController.h */,
 				CDDE8DE01821112C00587412 /* TWViewController.m */,
@@ -141,6 +152,7 @@
 				CDAE40DD182129DE004EC29C /* AboutViewController.m */,
 				CDAE40E518212A29004EC29C /* AllWordsViewController.h */,
 				CDAE40E618212A29004EC29C /* AllWordsViewController.m */,
+				CD89F7741827E13B004CA1C4 /* Model */,
 				CDAE40E218212A09004EC29C /* MultipleListViewController.h */,
 				CDAE40E318212A09004EC29C /* MultipleListViewController.m */,
 				CDAE40DF182129F4004EC29C /* SingleListViewController.h */,
@@ -154,6 +166,8 @@
 		CDDE8DD11821112C00587412 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CDDE8DD91821112C00587412 /* TWAppDelegate.h */,
+				CDDE8DDA1821112C00587412 /* TWAppDelegate.m */,
 				CDDE8DD21821112C00587412 /* TrickyWords-Info.plist */,
 				CDDE8DD31821112C00587412 /* InfoPlist.strings */,
 				CDDE8DD61821112C00587412 /* main.m */,
@@ -283,6 +297,7 @@
 				CDDE8DDB1821112C00587412 /* TWAppDelegate.m in Sources */,
 				CDAE40E718212A29004EC29C /* AllWordsViewController.m in Sources */,
 				CDAE40DE182129DE004EC29C /* AboutViewController.m in Sources */,
+				CD89F7771827E226004CA1C4 /* TWWordsDeck.m in Sources */,
 				CDDE8DE11821112C00587412 /* TWViewController.m in Sources */,
 				CDAE40E1182129F4004EC29C /* SingleListViewController.m in Sources */,
 			);

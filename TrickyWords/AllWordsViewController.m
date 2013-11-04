@@ -7,6 +7,7 @@
 //
 
 #import "AllWordsViewController.h"
+#import "TWViewController.h"
 
 @interface AllWordsViewController ()
 
@@ -35,22 +36,33 @@
                          @"you", @"stop", @"no", @"here", @"not",
                          @"help", @"yes", @"go", @"off", @"now", nil];
     
-    [self allWordsCorrectButton:self];
+    [self startNewAllWordsRound];
+    
+    //[self allWordsCorrectButton:self];
     allWordsCorrectAnswers = 0;
     allWordsIncorrectAnswers = 0;
-   
     
-     }
+}
+
+- (void)startNewAllWordsRound{
+    NSLog(@"starting new all words round");
+    [self allWordsPresentWordstoScreen];
+    
+}
+
+-(void)updateScore{
+    NSLog(@"score updated");
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
 }
 
 - (void)allWordsPresentWordstoScreen {
     
-       if ([allWordsTextArray count] > 0){
+        if ([allWordsTextArray count] > 0){
     
         allWordsRandomNumber = arc4random()%[allWordsTextArray count];
         allWordsrandomText = [allWordsTextArray objectAtIndex:allWordsRandomNumber];
@@ -67,6 +79,7 @@
         NSLog(@"Incorrect: %d\n", allWordsIncorrectAnswers);
     }
 }
+
 - (IBAction)allWordsCorrectButton:(id)sender {
     
      [self allWordsPresentWordstoScreen];
@@ -108,19 +121,38 @@
     UIAlertView *finalScoreView = [[UIAlertView alloc] initWithTitle:title
         message:finalScoreMessage
         delegate:self
-        cancelButtonTitle:@"OK"
-        otherButtonTitles:nil];
+        cancelButtonTitle:@"Main Menu"
+        otherButtonTitles:@"Play Again", nil];
     [finalScoreView show]; }
 
-- (void)alertView:(UIAlertView *)finalScoreView didDismissWithButtonIndex:(NSInteger)buttonIndex
+/*- (void)alertView:(UIAlertView *)finalScoreView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    [self startNewRound];
+    [self returnToMainMenu];
     
+}*/
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"Main Menu"])
+    {
+        NSLog(@"Main Menu Button was selected.");
+        [self returnToMainMenu];
+    }
+    else if([title isEqualToString:@"Play Again"])
+    {
+        NSLog(@"Start New All Words Round Button was selected.");
+        [self startNewAllWordsRound];
+    }
 }
 
-- (void)startNewRound
+
+- (void)returnToMainMenu
 {
-    NSLog(@"starting new round");
-}
+        NSLog(@"returning to Main Menu");
+    [self performSegueWithIdentifier:@"MainMenuSegueAllWords" sender:self];
+    }
+
+
 
 @end
