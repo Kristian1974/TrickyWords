@@ -26,10 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    NSArray *array = [[NSArray alloc] initWithObjects:@"list 1",@"list 2",@"list 3",@"list 4", @"list 5", nil];
-    self.PickerData = array;
+	// Do any additional setup after loading the view
     
 }
 
@@ -43,47 +40,13 @@
     return 1;
 }
 
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _PickerData.count;
-}
-
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _PickerData [row];
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    int select = row;
-    if (select == 0) {
-        //label.text = @"list 1 Is Selected";
-        [self list1Selected];
-    } else
-        if (select == 1) {
-            //label.text = @"list 2 Is Selected";
-            [self list2Selected];
-        } else
-            if (select == 2) {
-                //label.text = @"list 3 Is Selected";
-                [self list3Selected];
-            } else
-                if (select == 3) {
-                    //label.text = @"list 4 Is Selected";
-                    [self list4Selected];
-                }
-                else
-                    if (select == 4) {
-                        //label.text = @"list 5 Is Selected";
-                        [self list5Selected];
-                    }
-}
-
 -(void)list1Selected{
     
     singleListTextArray1 = [NSMutableArray arrayWithObjects:
                          @"the", @"and", @"a", @"to", @"I", nil];
     
-    list1CorrectAnswers = 0;
-    list1IncorrectAnswers = 0;
-    
+    singleListCorrectAnswers = 0;
+    singleListIncorrectAnswers = 0;    
     [self list1PresentWordstoScreen];
 }
 
@@ -92,8 +55,9 @@
     singleListTextArray2 = [NSMutableArray arrayWithObjects:
                          @"look", @"come", @"in", @"is", @"it", nil];
     
-    list2CorrectAnswers = 0;
-    list2IncorrectAnswers = 0;
+    singleListCorrectAnswers = 0;
+    singleListIncorrectAnswers = 0;
+    [self list2PresentWordstoScreen];
 }
 
 -(void)list3Selected{
@@ -101,8 +65,9 @@
     singleListTextArray3 = [NSMutableArray arrayWithObjects:
                          @"can", @"home", @"we", @"mum", @"dad", nil];
     
-    list3CorrectAnswers = 0;
-    list3IncorrectAnswers = 0;
+    singleListCorrectAnswers = 0;
+    singleListIncorrectAnswers = 0;
+    [self list3PresentWordstoScreen];
 }
 
 -(void)list4Selected{
@@ -110,8 +75,9 @@
     singleListTextArray4 = [NSMutableArray arrayWithObjects:
                          @"you", @"stop", @"no", @"here", @"not", nil];
     
-    list4CorrectAnswers = 0;
-    list4IncorrectAnswers = 0;
+    singleListCorrectAnswers = 0;
+    singleListIncorrectAnswers = 0;
+    [self list4PresentWordstoScreen];
 }
 
 -(void)list5Selected{
@@ -119,9 +85,21 @@
     singleListTextArray5 = [NSMutableArray arrayWithObjects:
                          @"help", @"yes", @"go", @"off", @"now", nil];
     
-    list5CorrectAnswers = 0;
-    list5IncorrectAnswers = 0;
+    singleListCorrectAnswers = 0;
+    singleListIncorrectAnswers = 0;
+    [self list5PresentWordstoScreen];
 }
+
+-(void)list6Selected{
+    
+    singleListTextArray6 = [NSMutableArray arrayWithObjects:
+                            @"see", @"like", @"where", @"he", @"my", nil];
+    
+    singleListCorrectAnswers = 0;
+    singleListIncorrectAnswers = 0;
+    [self list6PresentWordstoScreen];
+}
+
 
 //List 1
 - (void)list1PresentWordstoScreen {
@@ -139,16 +117,121 @@
         
         [self showAlert];
         
-        NSLog(@"Correct: %d\n", list1CorrectAnswers);
-        NSLog(@"Incorrect: %d\n", list1IncorrectAnswers);
+        NSLog(@"Correct: %d\n", singleListCorrectAnswers);
+        NSLog(@"Incorrect: %d\n", singleListIncorrectAnswers);
+    }
+}
+
+//List 2
+- (void)list2PresentWordstoScreen {
+    
+    if ([singleListTextArray2 count] > 0){
+        
+        list2RandomNumber = arc4random()%[singleListTextArray2 count];
+        singleListrandomText2 = [singleListTextArray2 objectAtIndex:list2RandomNumber];
+        _singleListShowWord.text = singleListrandomText2;
+        [singleListTextArray2 removeObjectAtIndex:list2RandomNumber];
+        
+    } else
+    {
+        // show result screen
+        
+        [self showAlert];
+        
+        NSLog(@"Correct: %d\n", singleListCorrectAnswers);
+        NSLog(@"Incorrect: %d\n", singleListIncorrectAnswers);
+    }
+}
+
+//List 3
+- (void)list3PresentWordstoScreen {
+    
+    if ([singleListTextArray3 count] > 0){
+        
+        list3RandomNumber = arc4random()%[singleListTextArray3 count];
+        singleListrandomText3 = [singleListTextArray3 objectAtIndex:list3RandomNumber];
+        _singleListShowWord.text = singleListrandomText3;
+        [singleListTextArray3 removeObjectAtIndex:list3RandomNumber];
+        
+    } else
+    {
+        // show result screen
+        
+        [self showAlert];
+        
+        NSLog(@"Correct: %d\n", singleListCorrectAnswers);
+        NSLog(@"Incorrect: %d\n", singleListIncorrectAnswers);
+    }
+}
+
+//List 4
+- (void)list4PresentWordstoScreen {
+    
+    if ([singleListTextArray4 count] > 0){
+        
+        list4RandomNumber = arc4random()%[singleListTextArray4 count];
+        singleListrandomText4 = [singleListTextArray4 objectAtIndex:list4RandomNumber];
+        _singleListShowWord.text = singleListrandomText4;
+        [singleListTextArray4 removeObjectAtIndex:list4RandomNumber];
+        
+    } else
+    {
+        // show result screen
+        
+        [self showAlert];
+        
+        NSLog(@"Correct: %d\n", singleListCorrectAnswers);
+        NSLog(@"Incorrect: %d\n", singleListIncorrectAnswers);
+    }
+}
+
+//List 5
+- (void)list5PresentWordstoScreen {
+    
+    if ([singleListTextArray5 count] > 0){
+        
+        list5RandomNumber = arc4random()%[singleListTextArray5 count];
+        singleListrandomText5 = [singleListTextArray5 objectAtIndex:list5RandomNumber];
+        _singleListShowWord.text = singleListrandomText5;
+        [singleListTextArray5 removeObjectAtIndex:list5RandomNumber];
+        
+    } else
+    {
+        // show result screen
+        
+        [self showAlert];
+        
+        NSLog(@"Correct: %d\n", singleListCorrectAnswers);
+        NSLog(@"Incorrect: %d\n", singleListIncorrectAnswers);
+    }
+}
+
+//List 6
+- (void)list6PresentWordstoScreen {
+    
+    if ([singleListTextArray6 count] > 0){
+        
+        list6RandomNumber = arc4random()%[singleListTextArray6 count];
+        singleListrandomText6 = [singleListTextArray6 objectAtIndex:list6RandomNumber];
+        _singleListShowWord.text = singleListrandomText6;
+        [singleListTextArray6 removeObjectAtIndex:list6RandomNumber];
+        
+    } else
+    {
+        // show result screen
+        
+        [self showAlert];
+        
+        NSLog(@"Correct: %d\n", singleListCorrectAnswers);
+        NSLog(@"Incorrect: %d\n", singleListIncorrectAnswers);
     }
 }
 
 - (IBAction)singleListCorrectButton:(id)sender {
     
-    list1CorrectAnswers = list1CorrectAnswers + 1;
-    NSLog(@"Current Correct: %d", list1CorrectAnswers);
-    NSLog(@"Current Incorrect: %d", list1IncorrectAnswers);
+    singleListCorrectAnswers = singleListCorrectAnswers + 1;
+    NSLog(@"Current Correct: %d", singleListCorrectAnswers);
+    NSLog(@"Current Incorrect: %d", singleListIncorrectAnswers);
     [self list1PresentWordstoScreen];
     //play congrats sound
     
@@ -157,9 +240,9 @@
 
 - (IBAction)singleListIncorrectButton:(id)sender {
     
-    list1IncorrectAnswers = list1IncorrectAnswers + 1;
-    NSLog(@"Current Correct: %d", list1CorrectAnswers);
-    NSLog(@"Current Incorrect: %d", list1IncorrectAnswers);
+    singleListIncorrectAnswers = singleListIncorrectAnswers + 1;
+    NSLog(@"Current Correct: %d", singleListCorrectAnswers);
+    NSLog(@"Current Incorrect: %d", singleListIncorrectAnswers);
     [self list1PresentWordstoScreen];
     
     //play bad luck sound
@@ -168,7 +251,7 @@
 - (void)showAlert {
     
     int finalScore;
-    finalScore = list1CorrectAnswers;
+    finalScore = singleListCorrectAnswers;
     
     NSString *title = [NSString stringWithFormat:@"You scored %d/5", finalScore];
     

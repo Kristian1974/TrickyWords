@@ -34,7 +34,8 @@
                                    @"look", @"come", @"in", @"is", @"it",
                                    @"can", @"home", @"we", @"mum", @"dad",
                                    @"you", @"stop", @"no", @"here", @"not",
-                                   @"help", @"yes", @"go", @"off", @"now", nil];
+                                   @"help", @"yes", @"go", @"off", @"now",
+                                    @"see", @"like", @"where", @"he", @"my", nil];
     [self startNewAllWordsRound];
     
     //[self allWordsCorrectButton:self];
@@ -101,18 +102,18 @@
     int finalScore;
     finalScore = allWordsCorrectAnswers;
     
-    NSString *title = [NSString stringWithFormat:@"You scored %d/25", finalScore];
+    NSString *title = [NSString stringWithFormat:@"You scored %d/30", finalScore];
     
     NSString *finalScoreMessage;
     if (finalScore < 7){
         finalScoreMessage = @"Oops, you need much more practice";
-    }else if (finalScore <15){
+    }else if (finalScore <20){
         finalScoreMessage = @"Keep working at it";
-    }else if (finalScore < 20){
-        finalScoreMessage = @"Good Effort - a few words to practice";
     }else if (finalScore < 25){
+        finalScoreMessage = @"Good Effort - a few words to practice";
+    }else if (finalScore < 30){
         finalScoreMessage = @"Excellent Effort - nearly perfect";
-    }else if (finalScore == 25){
+    }else if (finalScore == 30){
         finalScoreMessage = @"Perfect Score!! - well done";
     }
     

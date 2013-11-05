@@ -99,13 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD89F7741827E13B004CA1C4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		CDAE40E818215201004EC29C /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +152,6 @@
 				CDAE40DD182129DE004EC29C /* AboutViewController.m */,
 				CDAE40E518212A29004EC29C /* AllWordsViewController.h */,
 				CDAE40E618212A29004EC29C /* AllWordsViewController.m */,
-				CD89F7741827E13B004CA1C4 /* Model */,
 				CDAE40E218212A09004EC29C /* MultipleListViewController.h */,
 				CDAE40E318212A09004EC29C /* MultipleListViewController.m */,
 				CDAE40DF182129F4004EC29C /* SingleListViewController.h */,
