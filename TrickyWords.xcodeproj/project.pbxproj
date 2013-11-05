@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD89F7771827E226004CA1C4 /* TWWordsDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = CD89F7761827E226004CA1C4 /* TWWordsDeck.m */; };
+		CD1BBCBB18291BCE0048F7B9 /* CorrectButtonTW.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1BBCBA18291BCE0048F7B9 /* CorrectButtonTW.png */; };
+		CD1BBCBD18291BD20048F7B9 /* IncorrectButtonTW.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1BBCBC18291BD20048F7B9 /* IncorrectButtonTW.png */; };
+		CD1BBCBF18291BD60048F7B9 /* CorrectButtonTW@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1BBCBE18291BD60048F7B9 /* CorrectButtonTW@x2.png */; };
+		CD1BBCC118291BDA0048F7B9 /* IncorrectButtonTW@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = CD1BBCC018291BDA0048F7B9 /* IncorrectButtonTW@x2.png */; };
 		CDAE40DE182129DE004EC29C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40DD182129DE004EC29C /* AboutViewController.m */; };
 		CDAE40E1182129F4004EC29C /* SingleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40E0182129F4004EC29C /* SingleListViewController.m */; };
 		CDAE40E418212A09004EC29C /* MultipleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAE40E318212A09004EC29C /* MultipleListViewController.m */; };
@@ -39,8 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD89F7751827E226004CA1C4 /* TWWordsDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWWordsDeck.h; sourceTree = "<group>"; };
-		CD89F7761827E226004CA1C4 /* TWWordsDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWWordsDeck.m; sourceTree = "<group>"; };
+		CD1BBCBA18291BCE0048F7B9 /* CorrectButtonTW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CorrectButtonTW.png; sourceTree = "<group>"; };
+		CD1BBCBC18291BD20048F7B9 /* IncorrectButtonTW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IncorrectButtonTW.png; sourceTree = "<group>"; };
+		CD1BBCBE18291BD60048F7B9 /* CorrectButtonTW@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CorrectButtonTW@x2.png"; sourceTree = "<group>"; };
+		CD1BBCC018291BDA0048F7B9 /* IncorrectButtonTW@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IncorrectButtonTW@x2.png"; sourceTree = "<group>"; };
 		CDAE40DC182129DE004EC29C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		CDAE40DD182129DE004EC29C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		CDAE40DF182129F4004EC29C /* SingleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleListViewController.h; sourceTree = "<group>"; };
@@ -97,8 +102,6 @@
 		CD89F7741827E13B004CA1C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD89F7751827E226004CA1C4 /* TWWordsDeck.h */,
-				CD89F7761827E226004CA1C4 /* TWWordsDeck.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -106,6 +109,10 @@
 		CDAE40E818215201004EC29C /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				CD1BBCBA18291BCE0048F7B9 /* CorrectButtonTW.png */,
+				CD1BBCBC18291BD20048F7B9 /* IncorrectButtonTW.png */,
+				CD1BBCBE18291BD60048F7B9 /* CorrectButtonTW@x2.png */,
+				CD1BBCC018291BDA0048F7B9 /* IncorrectButtonTW@x2.png */,
 			);
 			name = Graphics;
 			path = TrickyWords;
@@ -272,8 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDDE8DE31821112C00587412 /* Images.xcassets in Resources */,
+				CD1BBCC118291BDA0048F7B9 /* IncorrectButtonTW@x2.png in Resources */,
 				CDDE8DD51821112C00587412 /* InfoPlist.strings in Resources */,
+				CD1BBCBF18291BD60048F7B9 /* CorrectButtonTW@x2.png in Resources */,
 				CDDE8DDE1821112C00587412 /* Main.storyboard in Resources */,
+				CD1BBCBB18291BCE0048F7B9 /* CorrectButtonTW.png in Resources */,
+				CD1BBCBD18291BD20048F7B9 /* IncorrectButtonTW.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +308,6 @@
 				CDDE8DDB1821112C00587412 /* TWAppDelegate.m in Sources */,
 				CDAE40E718212A29004EC29C /* AllWordsViewController.m in Sources */,
 				CDAE40DE182129DE004EC29C /* AboutViewController.m in Sources */,
-				CD89F7771827E226004CA1C4 /* TWWordsDeck.m in Sources */,
 				CDDE8DE11821112C00587412 /* TWViewController.m in Sources */,
 				CDAE40E1182129F4004EC29C /* SingleListViewController.m in Sources */,
 			);

@@ -30,12 +30,11 @@
 	// Do any additional setup after loading the view.
     
     allWordsTextArray = [NSMutableArray arrayWithObjects:
-                         @"the", @"and", @"a", @"to", @"I",
-                         @"look", @"come", @"in", @"is", @"it",
-                         @"can", @"home", @"we", @"mum", @"dad",
-                         @"you", @"stop", @"no", @"here", @"not",
-                         @"help", @"yes", @"go", @"off", @"now", nil];
-    
+                                   @"the", @"and", @"a", @"to", @"I",
+                                   @"look", @"come", @"in", @"is", @"it",
+                                   @"can", @"home", @"we", @"mum", @"dad",
+                                   @"you", @"stop", @"no", @"here", @"not",
+                                   @"help", @"yes", @"go", @"off", @"now", nil];
     [self startNewAllWordsRound];
     
     //[self allWordsCorrectButton:self];
@@ -48,10 +47,6 @@
     NSLog(@"starting new all words round");
     [self allWordsPresentWordstoScreen];
     
-}
-
--(void)updateScore{
-    NSLog(@"score updated");
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,9 +77,10 @@
 
 - (IBAction)allWordsCorrectButton:(id)sender {
     
-     [self allWordsPresentWordstoScreen];
-    allWordsCorrectAnswers ++;
-    
+    allWordsCorrectAnswers = allWordsCorrectAnswers + 1;
+    NSLog(@"Current Correct: %d", allWordsCorrectAnswers);
+    NSLog(@"Current Incorrect: %d", allWordsIncorrectAnswers);
+    [self allWordsPresentWordstoScreen];
     //play congrats sound
     
     
@@ -92,8 +88,10 @@
 
 - (IBAction)allWordsIncorrectButton:(id)sender {
     
+    allWordsIncorrectAnswers = allWordsIncorrectAnswers + 1;
+    NSLog(@"Current Correct: %d", allWordsCorrectAnswers);
+    NSLog(@"Current Incorrect: %d", allWordsIncorrectAnswers);
     [self allWordsPresentWordstoScreen];
-    allWordsIncorrectAnswers ++;
     
     //play bad luck sound
     }
@@ -115,7 +113,7 @@
     }else if (finalScore < 25){
         finalScoreMessage = @"Excellent Effort - nearly perfect";
     }else if (finalScore == 25){
-        finalScoreMessage = @"Perfect Score!! - ready for next list";
+        finalScoreMessage = @"Perfect Score!! - well done";
     }
     
     UIAlertView *finalScoreView = [[UIAlertView alloc] initWithTitle:title
@@ -124,12 +122,6 @@
         cancelButtonTitle:@"Main Menu"
         otherButtonTitles:@"Play Again", nil];
     [finalScoreView show]; }
-
-/*- (void)alertView:(UIAlertView *)finalScoreView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    [self returnToMainMenu];
-    
-}*/
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -142,7 +134,7 @@
     else if([title isEqualToString:@"Play Again"])
     {
         NSLog(@"Start New All Words Round Button was selected.");
-        [self startNewAllWordsRound];
+        [self viewDidLoad];
     }
 }
 
