@@ -28,6 +28,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view
     
+    singleListCorrectAnswers = 0;
+    singleListIncorrectAnswers = 0;
+    _singleListHeader.text = @"Select List";
+    [self enableSingleListSelectionButtons];
+    [self showSingleListSelectionButtons];
+    _singleListShowWord.text = nil;
+    correctButtonOutlet.hidden = YES;
+    correctButtonOutlet.enabled = NO;
+    incorrectButtonOutlet.hidden = YES;
+    incorrectButtonOutlet.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,69 +46,119 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+/*-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
-}
+}*/
 
--(void)list1Selected{
+-(void)list1SelectedMethod{
     
+    listSelected = 1;
     singleListTextArray1 = [NSMutableArray arrayWithObjects:
                          @"the", @"and", @"a", @"to", @"I", nil];
     
     singleListCorrectAnswers = 0;
-    singleListIncorrectAnswers = 0;    
+    singleListIncorrectAnswers = 0;
+    _singleListHeader.text = @"List 1";
+    correctButtonOutlet.hidden = NO;
+    correctButtonOutlet.enabled =YES;
+    incorrectButtonOutlet.hidden = NO;
+    incorrectButtonOutlet.enabled = YES;
+    [self disableSingleListSelectionButtons];
+    [self hideSingleListSelectionButtons];
     [self list1PresentWordstoScreen];
 }
 
--(void)list2Selected{
+-(void)list2SelectedMethod{
     
+    listSelected = 2;
     singleListTextArray2 = [NSMutableArray arrayWithObjects:
                          @"look", @"come", @"in", @"is", @"it", nil];
     
     singleListCorrectAnswers = 0;
     singleListIncorrectAnswers = 0;
+    _singleListHeader.text = @"List 2";
+    correctButtonOutlet.hidden = NO;
+    correctButtonOutlet.enabled = YES;
+    incorrectButtonOutlet.hidden = NO;
+    incorrectButtonOutlet.enabled = YES;
+    [self disableSingleListSelectionButtons];
+    [self hideSingleListSelectionButtons];
     [self list2PresentWordstoScreen];
 }
 
--(void)list3Selected{
+-(void)list3SelectedMethod{
     
+    listSelected = 3;
     singleListTextArray3 = [NSMutableArray arrayWithObjects:
                          @"can", @"home", @"we", @"mum", @"dad", nil];
     
     singleListCorrectAnswers = 0;
     singleListIncorrectAnswers = 0;
+    _singleListHeader.text = @"List 3";
+    correctButtonOutlet.hidden = NO;
+    correctButtonOutlet.enabled = YES;
+    incorrectButtonOutlet.hidden = NO;
+    incorrectButtonOutlet.enabled = YES;
+    [self disableSingleListSelectionButtons];
+    [self hideSingleListSelectionButtons];
     [self list3PresentWordstoScreen];
 }
 
--(void)list4Selected{
+-(void)list4SelectedMethod{
     
+    listSelected = 4;
     singleListTextArray4 = [NSMutableArray arrayWithObjects:
                          @"you", @"stop", @"no", @"here", @"not", nil];
     
     singleListCorrectAnswers = 0;
     singleListIncorrectAnswers = 0;
+    _singleListHeader.text = @"List 4";
+    correctButtonOutlet.hidden = NO;
+    correctButtonOutlet.enabled = YES;
+    incorrectButtonOutlet.hidden = NO;
+    incorrectButtonOutlet.enabled = YES;
+    [self disableSingleListSelectionButtons];
+    [self hideSingleListSelectionButtons];
     [self list4PresentWordstoScreen];
 }
 
--(void)list5Selected{
+-(void)list5SelectedMethod{
     
+    listSelected = 5;
     singleListTextArray5 = [NSMutableArray arrayWithObjects:
                          @"help", @"yes", @"go", @"off", @"now", nil];
     
     singleListCorrectAnswers = 0;
     singleListIncorrectAnswers = 0;
+    _singleListHeader.text = @"List 5";
+    correctButtonOutlet.hidden = NO;
+    correctButtonOutlet.enabled = YES;
+    incorrectButtonOutlet.hidden = NO;
+    incorrectButtonOutlet.enabled = YES;
+    [self disableSingleListSelectionButtons];
+    [self hideSingleListSelectionButtons];
     [self list5PresentWordstoScreen];
 }
 
--(void)list6Selected{
+-(void)list6SelectedMethod{
     
+    listSelected = 6;
     singleListTextArray6 = [NSMutableArray arrayWithObjects:
                             @"see", @"like", @"where", @"he", @"my", nil];
     
     singleListCorrectAnswers = 0;
     singleListIncorrectAnswers = 0;
+    _singleListHeader.text = @"List 6";
+    correctButtonOutlet.hidden = NO;
+    correctButtonOutlet.enabled = YES;
+    incorrectButtonOutlet.hidden = NO;
+    incorrectButtonOutlet.enabled = YES;
+    [self disableSingleListSelectionButtons];
+    [self hideSingleListSelectionButtons];
     [self list6PresentWordstoScreen];
 }
+
+// add code for list 7 etc.
 
 
 //List 1
@@ -227,12 +287,14 @@
     }
 }
 
+// Add additional code for List 7 etc.
+
 - (IBAction)singleListCorrectButton:(id)sender {
     
     singleListCorrectAnswers = singleListCorrectAnswers + 1;
     NSLog(@"Current Correct: %d", singleListCorrectAnswers);
     NSLog(@"Current Incorrect: %d", singleListIncorrectAnswers);
-    [self list1PresentWordstoScreen];
+    [self presentNextWord];
     //play congrats sound
     
     
@@ -243,10 +305,61 @@
     singleListIncorrectAnswers = singleListIncorrectAnswers + 1;
     NSLog(@"Current Correct: %d", singleListCorrectAnswers);
     NSLog(@"Current Incorrect: %d", singleListIncorrectAnswers);
-    [self list1PresentWordstoScreen];
+    [self presentNextWord];
     
     //play bad luck sound
 }
+
+- (IBAction)list1Selected:(id)sender {
+    
+    [self list1SelectedMethod];
+    
+}
+
+- (IBAction)list2Selected:(id)sender {
+    
+    [self list2SelectedMethod];
+}
+
+- (IBAction)list3Selected:(id)sender {
+    
+    [self list3SelectedMethod];
+}
+
+- (IBAction)list4Selected:(id)sender {
+    
+    [self list4SelectedMethod];
+}
+
+- (IBAction)list5Selected:(id)sender {
+    
+    [self list5SelectedMethod];
+}
+
+- (IBAction)list6Selected:(id)sender {
+    
+    [self list6SelectedMethod];
+}
+
+/*- (IBAction)list7Selected:(id)sender {
+    
+    [self list7SelectedMethod];
+}
+
+- (IBAction)list8Selected:(id)sender {
+ 
+    [self list8SelectedMethod];
+}
+
+- (IBAction)list9Selected:(id)sender {
+ 
+    [self list9SelectedMethod];
+}
+
+- (IBAction)list10Selected:(id)sender {
+ 
+    [self list10SelectedMethod];
+}*/
 
 - (void)showAlert {
     
@@ -297,5 +410,90 @@
     [self performSegueWithIdentifier:@"MainMenuSegueSingleList" sender:self];
 }
 
+- (void)disableSingleListSelectionButtons
+{
+    singleList1ButtonOutlet.enabled = NO;
+    singleList2ButtonOutlet.enabled = NO;
+    singleList3ButtonOutlet.enabled = NO;
+    singleList4ButtonOutlet.enabled = NO;
+    singleList5ButtonOutlet.enabled = NO;
+    singleList6ButtonOutlet.enabled = NO;
+    singleList7ButtonOutlet.enabled = NO;
+    singleList8ButtonOutlet.enabled = NO;
+    singleList9ButtonOutlet.enabled = NO;
+    singleList10ButtonOutlet.enabled = NO;
+}
 
+- (void)hideSingleListSelectionButtons
+{
+    singleList1ButtonOutlet.hidden = YES;
+    singleList2ButtonOutlet.hidden = YES;
+    singleList3ButtonOutlet.hidden = YES;
+    singleList4ButtonOutlet.hidden = YES;
+    singleList5ButtonOutlet.hidden = YES;
+    singleList6ButtonOutlet.hidden = YES;
+    singleList7ButtonOutlet.hidden = YES;
+    singleList8ButtonOutlet.hidden = YES;
+    singleList9ButtonOutlet.hidden = YES;
+    singleList10ButtonOutlet.hidden = YES;
+}
+
+- (void)enableSingleListSelectionButtons
+{
+    singleList1ButtonOutlet.enabled = YES;
+    singleList2ButtonOutlet.enabled = YES;
+    singleList3ButtonOutlet.enabled = YES;
+    singleList4ButtonOutlet.enabled = YES;
+    singleList5ButtonOutlet.enabled = YES;
+    singleList6ButtonOutlet.enabled = YES;
+    singleList7ButtonOutlet.enabled = YES;
+    singleList8ButtonOutlet.enabled = YES;
+    singleList9ButtonOutlet.enabled = YES;
+    singleList10ButtonOutlet.enabled = YES;
+}
+
+- (void)showSingleListSelectionButtons
+{
+    singleList1ButtonOutlet.hidden = NO;
+    singleList2ButtonOutlet.hidden = NO;
+    singleList3ButtonOutlet.hidden = NO;
+    singleList4ButtonOutlet.hidden = NO;
+    singleList5ButtonOutlet.hidden = NO;
+    singleList6ButtonOutlet.hidden = NO;
+    singleList7ButtonOutlet.hidden = NO;
+    singleList8ButtonOutlet.hidden = NO;
+    singleList9ButtonOutlet.hidden = NO;
+    singleList10ButtonOutlet.hidden = NO;
+
+}
+
+- (void)presentNextWord
+{
+    if (listSelected == 1)
+    {
+        [self list1PresentWordstoScreen];
+    }
+    else if (listSelected == 2)
+    {
+        [self list2PresentWordstoScreen];
+    }
+    else if (listSelected == 3)
+    {
+        [self list3PresentWordstoScreen];
+    }
+    else if (listSelected == 4)
+    {
+        [self list4PresentWordstoScreen];
+    }
+    else if (listSelected == 5)
+    {
+        [self list5PresentWordstoScreen];
+    }
+    else if (listSelected == 6)
+    {
+        [self list6PresentWordstoScreen];
+    }
+}
+
+// code for list 7 onwards.
 @end

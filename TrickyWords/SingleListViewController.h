@@ -13,7 +13,21 @@
 
 {
 
-    IBOutlet UILabel *label;
+    IBOutlet UIButton *singleList1ButtonOutlet;
+    IBOutlet UIButton *singleList2ButtonOutlet;
+    IBOutlet UIButton *singleList3ButtonOutlet;
+    IBOutlet UIButton *singleList4ButtonOutlet;
+    IBOutlet UIButton *singleList5ButtonOutlet;
+    IBOutlet UIButton *singleList6ButtonOutlet;
+    IBOutlet UIButton *singleList7ButtonOutlet;
+    IBOutlet UIButton *singleList8ButtonOutlet;
+    IBOutlet UIButton *singleList9ButtonOutlet;
+    IBOutlet UIButton *singleList10ButtonOutlet;
+    
+    IBOutlet UIButton *correctButtonOutlet;
+    IBOutlet UIButton *incorrectButtonOutlet;
+    
+    int listSelected;
     
     int singleListCorrectAnswers;
     int singleListIncorrectAnswers;
@@ -42,21 +56,48 @@
     
     NSString *singleListrandomText6;
     NSMutableArray *singleListTextArray6;
+    
+   /* NSString *singleListrandomText7;
+    NSMutableArray *singleListTextArray7;
 
+    NSString *singleListrandomText8;
+    NSMutableArray *singleListTextArray8;
+
+    NSString *singleListrandomText9;
+    NSMutableArray *singleListTextArray9;
+    
+    NSString *singleListrandomText10;
+    NSMutableArray *singleListTextArray10;*/
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *singleListShowWord;
+@property (strong, nonatomic) IBOutlet UILabel *singleListHeader;
 
 //@property (retain, nonatomic) IBOutlet UIPickerView *Picker;
 //@property (retain, nonatomic) NSArray *PickerData;
 - (IBAction)singleListCorrectButton:(id)sender;
 - (IBAction)singleListIncorrectButton:(id)sender;
+- (IBAction)list1Selected:(id)sender;
+- (IBAction)list2Selected:(id)sender;
+- (IBAction)list3Selected:(id)sender;
+- (IBAction)list4Selected:(id)sender;
+- (IBAction)list5Selected:(id)sender;
+- (IBAction)list6Selected:(id)sender;
+/*- (IBAction)list7Selected:(id)sender;
+- (IBAction)list8Selected:(id)sender;
+- (IBAction)list9Selected:(id)sender;
+- (IBAction)list10Selected:(id)sender;*/
 
--(void)list1Selected;
--(void)list2Selected;
--(void)list3Selected;
--(void)list4Selected;
--(void)list5Selected;
--(void)list6Selected;
+
+-(void)list1SelectedMethod;
+-(void)list2SelectedMethod;
+-(void)list3SelectedMethod;
+-(void)list4SelectedMethod;
+-(void)list5SelectedMethod;
+-(void)list6SelectedMethod;
+/*-(void)list7SelectedMethod;
+-(void)list8SelectedMethod;
+-(void)list9SelectedMethod;
+-(void)list10SelectedMethod;*/
 
 @end
